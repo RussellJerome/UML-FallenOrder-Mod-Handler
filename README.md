@@ -11,4 +11,4 @@ theory of liability, whether in contract, strict liability, or tort (including n
 # Installing the Core Mod
 First make sure you have the Unreal Mod Loader downloaded and ready to go. (It also doesn't hurt to run it with the game once without mods so it can setup any missing folders)
 
-Place the core mod in the following folder (SwGame/Content/CoreMods)
+Take the SwGame folder from the released download and drag it into your game directory and then just run the game.
