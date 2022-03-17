@@ -1,6 +1,7 @@
 #include "FallenOrderModHandler.h"
 #include "Utilities/MinHook.h"
 
+
 PVOID(*origSay)(void*, UE4::FString*);
 PVOID hookSay(void* GM, UE4::FString* Message)
 {
@@ -23,16 +24,8 @@ void FallenOrderModHandler::InitializeMod()
 	UE4::InitSDK();
 	SetupHooks();
 
+	MinHook::Init(); //Uncomment if you plan to do hooks
 	MinHook::Add((DWORD64)Pattern::Find("33 C0 4C 8B C2 48 89 44 24 08 33 D2"), &hookSay, &origSay, "AGameMode::Say");
-	//UseMenuButton = true; // Allows Mod Loader To Show Button
-}
-
-void FallenOrderModHandler::ProcessFunction(UE4::UObject* obj, UE4::FFrame* Frame)
-{
-	if (obj)
-	{
-		//if(obj == ModActor) // Checks If the actor calling this function is your Mod Actor Function
-	}
 }
 
 bool FirstLoad = true;
@@ -85,6 +78,10 @@ void FallenOrderModHandler::PostBeginPlay(std::wstring ModActorName, UE4::AActor
 		//Sets ModActor Ref
 		ModActor = Actor;
 	}
+}
+
+void FallenOrderModHandler::DX11Present(ID3D11Device* pDevice, ID3D11DeviceContext* pContext, ID3D11RenderTargetView* pRenderTargetView)
+{
 }
 
 void FallenOrderModHandler::OnModMenuButtonPressed()
