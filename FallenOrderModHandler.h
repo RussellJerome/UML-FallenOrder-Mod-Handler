@@ -9,7 +9,7 @@ public:
 	FallenOrderModHandler()
 	{
 		ModName = "Jedi Fallen Order Mod Handler"; // Mod Name -- If Using BP ModActor, Should Be The Same Name As Your Pak
-		ModVersion = "1.0.0"; // Mod Version
+		ModVersion = "1.1.0"; // Mod Version
 		ModDescription = "Allows UML to load mods created for FOML"; // Mod Description
 		ModAuthors = "RussellJ"; // Mod Author
 		ModLoaderVersion = "2.2.0";
